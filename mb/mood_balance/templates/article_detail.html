@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}
+{{article.title}}
+{% endblock %}
+{% block content %}
+<br>
+<div class="article-detail">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="text-center display-4">{{ article.title }}</h2>
+            <p class="text-muted">{{ article.date }}</p>
+            <div class="row">
+                <div class="col-2"></div>
+                    <div class="col-8">
+                        <p class="lead text-justify">{{ article.body|safe }}</p>
+                        <p class=""> added by {{ article.author }}</p>
+                    </div>
+                <div class="col-2"></div>
+            </div>
+             <div class="fb-like d-block" data-href="https://facebook.com/moodbalance/" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+            <div class="fb-comments" data-href="{{ request.build_absolute_uri }}" data-numposts="5"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

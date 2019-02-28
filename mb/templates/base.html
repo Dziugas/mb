@@ -1,0 +1,84 @@
+{% load static from staticfiles %}
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/styles.css">
+
+    <title>{% block title %}{% endblock %}</title>
+    <!--<link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}">-->
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.12';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+<header class="row">
+    <nav class="col-6 navbar navbar-light navbar-expand-md">
+        <div class="container">
+            <!--  <a class="navbar-brand font-italic" href="#">Mood Balance</a> -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href='/'>Home</a>
+                    <a class="nav-item nav-link" href='/blog/'>Blog</a>
+                    <a class="nav-item nav-link" href='/about/'>About</a>
+                    <a class="nav-item nav-link" href='/contact/'>Contact</a>       </div>
+            </div>
+        </div>
+    </nav>
+    <nav class="col-6">
+    </nav>
+</header>
+
+<div class="jumbotron bg-dark text-muted text-center mb-0">
+    <div class="container">
+        <h1 class="display-3">Mood Balance</h1>
+        <div class="container">
+
+            <p>
+                <a href="https://www.facebook.com/moodbalance/" target="_blank">
+                    <img class="m-2" src="/static/FB-f-Logo__white_29.png">
+                </a>
+            </p>
+            <p class="lead text-muted d-inline">Turn on the light</p>
+        </div>
+    </div>
+</div>
+
+{% block content %}
+{% endblock %}
+<footer>
+
+        <div class="row bg-dark text-muted">
+            <div class="col-6 offset-6 text-right">
+                <a href="https://www.facebook.com/moodbalance/" target="_blank">
+                    <img class="m-5" src="/static/FB-f-Logo__white_29.png">
+                </a>
+            </div>
+        </div>
+
+</footer>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+</html>

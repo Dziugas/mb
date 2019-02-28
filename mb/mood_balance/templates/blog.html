@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}
+Blog
+{% endblock %}
+{% block content %}
+<br>
+<div class="container">
+    <div class="display-4 text-center">LATEST POSTS</div><br><br>
+    <div class="row m-3">
+        {% for article in articles %}
+        <div class="col-sm-12 col-lg-6">
+            <div class="m-3 text-center">
+                <a href="{% url 'detail' article.slug %}">
+                    <img class="img-fluid mb-2" src="{{ article.thumb.url }}"/>
+                </a>
+                <p><a class="lg h3 text-dark" id="article_name" href="{% url 'detail' article.slug %}">{{ article.title }}</a></p>
+                <p>{{ article.date|date:"Y m d"}}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
