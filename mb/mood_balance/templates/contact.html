@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+Contact me
+{% endblock %}
+{% block content %}
+<br>
+<div class="container text-center">
+    <div class="display-4">GET IN TOUCH</div>
+    <br>
+    <form class="mb-5" method="post">
+      {% csrf_token %}      
+        <p class="lead">Your {{ form.name.label }}</p>
+      <p class="lead">{{ form.name }}</p>
+      <p class="lead">Your {{ form.email.label }}</p>
+      <p class="lead">{{ form.email }}</p>
+      <p class="lead">Your {{ form.message.label }}</p>
+      <p class="lead">{{ form.message }}</p>
+      <button class="btn btn-dark" type="submit">Send</button>
+    </form>
+</div>
+{% endblock %}

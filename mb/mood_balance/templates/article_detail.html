@@ -12,8 +12,10 @@
             <div class="row">
                 <div class="col-2"></div>
                     <div class="col-8">
-                        <p class="lead text-justify">{{ article.body|safe }}</p>
-                        <p class=""> added by {{ article.author }}</p>
+                        <p class="lead text-justify">
+                        {{ article.body | safe}}
+                        </p>
+                        <p class="text-muted"> added by {{ article.author }}</p>
                     </div>
                 <div class="col-2"></div>
             </div>
